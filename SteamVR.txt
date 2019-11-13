@@ -1,0 +1,8 @@
+Add Player prefab
+
+Add Teleporting prefab (teleport using d-pad)
+- Add TeleportPoint prefab for specific places to teleport
+- Add Plane with TeleportArea script for area to teleport within
+
+Add object with Interactable script 
+- Add Throwable script (adds rigidbody and velocityestimator)
