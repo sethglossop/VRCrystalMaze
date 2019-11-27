@@ -9,6 +9,8 @@ public class MazeTilt : MonoBehaviour
     public LinearMapping UDHandle;
     private float LRTilt;
     private float UDTilt;
+    private Vector3 currentAngle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +22,8 @@ public class MazeTilt : MonoBehaviour
     {
         LRTilt = -LRHandle.value;
         UDTilt = UDHandle.value;
-        transform.rotation = Quaternion.Euler(new Vector3((LRTilt + 0.5f) * 120, 0, (UDTilt - 0.5f) * 120));
+
+        currentAngle = new Vector3(Mathf.LerpAngle(currentAngle.x, (LRTilt + 0.5f) * 120, Time.deltaTime), 0, Mathf.LerpAngle(currentAngle.z, (UDTilt - 0.5f) * 120, Time.deltaTime));
+        transform.eulerAngles = currentAngle;
     }
 }
