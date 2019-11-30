@@ -13,9 +13,10 @@ GameObject:
   - component: {fileID: 7250649907281767708}
   - component: {fileID: 7250649907281767709}
   - component: {fileID: 7250649907281767714}
+  - component: {fileID: -4231147875889538439}
   m_Layer: 9
   m_Name: Gold
-  m_TagString: Untagged
+  m_TagString: Gold
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,3 +145,16 @@ MonoBehaviour:
   highlightOnHover: 1
   hideHighlight: []
   hoverPriority: 0
+--- !u!114 &-4231147875889538439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7250649907281767715}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 262f27b6ed5aecc41958539f87df923e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelDome: {fileID: 0}
