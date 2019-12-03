@@ -31,4 +31,9 @@ public class LevelMedieval : MonoBehaviour
             
         }
     }
+
+    void DropChandelier()
+    {
+        chandelier.transform.Translate(0,);
+    }
 }
