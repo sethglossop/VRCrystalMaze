@@ -6,16 +6,18 @@ public class TicketMove : MonoBehaviour
 {
     public GameObject ticket;
     private GameObject newTicket;
-    private float maxradius = 2;
+    private float maxradius = 5;
     private float maxhorizspeed = 2f;
     private float maxvertspeed = 2f;
     private float radius;
     private float horizspeed;
     private float vertspeed;
+    private LevelDome levelDome;
 
     // Start is called before the first frame update
     void Start()
     {
+        levelDome = FindObjectOfType<LevelDome>();
         horizspeed = Random.Range(0, maxhorizspeed);
         vertspeed = Random.Range(-maxvertspeed, maxvertspeed);
         radius = Random.Range(0.5f, maxradius);
@@ -33,6 +35,11 @@ public class TicketMove : MonoBehaviour
         if (transform.position.y < 0 || transform.position.y > 4)
         {
             vertspeed = -vertspeed;
+        }
+
+        if (levelDome.time == 0)
+        {
+            gameObject.SetActive(false);
         }
     }
 }

@@ -36,8 +36,4 @@ public class TargetHit : MonoBehaviour
             elapsedTime = 0;
         }
     }
-
-
-
-
 }
