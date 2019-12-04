@@ -18,7 +18,7 @@ public class TargetMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (level.targets > 0 && level.timeLimit > 0)
+        if (level.targets > 0)
         {
             transform.Rotate(0, maxSpeed * (1 - level.targets / maxTargets), 0);
         }

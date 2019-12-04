@@ -2,26 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MazeTarget : MonoBehaviour
+public class CannonDestroy : MonoBehaviour
 {
-    public LevelTimer levelTimer;
+    public LevelTimer level;
+    public GameObject spawn;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (levelTimer.finish)
-        {
-            Destroy(gameObject);
-        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        levelTimer.Win();
+        spawn.transform.parent = null;
+        level.Win();
+        Destroy(gameObject);
+        Destroy(other.gameObject);
     }
 }

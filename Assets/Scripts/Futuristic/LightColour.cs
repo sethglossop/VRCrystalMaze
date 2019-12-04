@@ -5,9 +5,9 @@ using UnityEngine;
 public class LightColour : MonoBehaviour
 {
     private Light lamp;
-    private bool red = false;
-    private bool blue = false;
-    private bool green = false;
+    public bool red = false;
+    public bool blue = false;
+    public bool green = false;
 
     // Start is called before the first frame update
     void Start()

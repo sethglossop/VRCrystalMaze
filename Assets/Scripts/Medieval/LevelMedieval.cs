@@ -5,35 +5,21 @@ using UnityEngine;
 public class LevelMedieval : MonoBehaviour
 { 
     public int targets;
-    public float timeLimit;
-    public GameObject chandelier;
+    private LevelTimer levelTimer;
   
     // Start is called before the first frame update
     void Start()
     {
         targets = GameObject.FindGameObjectsWithTag("Target").Length;
+        levelTimer = FindObjectOfType<LevelTimer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (targets > 0)
+        if (targets == 0)
         {
-            timeLimit -= Time.deltaTime;
-            if (timeLimit == 0)
-            {
-
-            }
+            levelTimer.Win();
         }
-
-        if (timeLimit == 0)
-        {
-            
-        }
-    }
-
-    void DropChandelier()
-    {
-        chandelier.transform.Translate(0,);
     }
 }

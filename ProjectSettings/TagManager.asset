@@ -9,6 +9,11 @@ TagManager:
   - Target
   - Gold
   - Silver
+  - Cube
+  - Cylinder
+  - Sphere
+  - Cannonball
+  - Chest
   layers:
   - Default
   - TransparentFX

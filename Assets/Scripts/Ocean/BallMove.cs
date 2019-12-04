@@ -8,6 +8,7 @@ public class BallMove : MonoBehaviour
     private Transform player;
     private Vector3 aim;
     private float speed = 1.5f;
+    private float destroyTime = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,5 +22,10 @@ public class BallMove : MonoBehaviour
     void Update()
     {
         transform.Translate(aim*speed*Time.deltaTime);
+        destroyTime += Time.deltaTime;
+        if (destroyTime > 3)
+        {
+            Destroy(gameObject);
+        }
     }
 }
