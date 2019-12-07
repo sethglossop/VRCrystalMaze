@@ -1,16 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Valve.VR.InteractionSystem;
+using UnityEngine.UI;
 
-public class CannonDestroy : MonoBehaviour
+public class CannonPlayer : MonoBehaviour
 {
-
-
+    public GameObject canvas;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -18,10 +17,9 @@ public class CannonDestroy : MonoBehaviour
     {
         
     }
-
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        canvas.SetActive(true);
         Destroy(other.gameObject);
     }
 }
