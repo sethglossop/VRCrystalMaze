@@ -10,13 +10,11 @@ public class BeginLevel : MonoBehaviour
     public GameObject panelLeft;
     public GameObject panelRight;
     public GameObject scoreTimer;
-    private Player player;
 
     // Start is called before the first frame update
     void Start()
     {
         interactable = GetComponent<Interactable>();
-        player = FindObjectOfType<Player>();
     }
 
     // Update is called once per frame

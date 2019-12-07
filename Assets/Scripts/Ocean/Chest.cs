@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Chest : MonoBehaviour
 {
-    public LevelTimer level;
+    public WinLose level;
     public GameObject spawn;
 
     // Start is called before the first frame update

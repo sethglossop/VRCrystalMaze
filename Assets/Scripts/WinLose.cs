@@ -2,14 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelTimer : MonoBehaviour
+public class WinLose : MonoBehaviour
 {
     private TextMesh textMesh;
-    private float timer;
-    public float seconds;
     public Transform spawn;
     public GameObject winCrystal;
-    public GameObject loseCrystal;
     public bool finish = false;
     public string zone;
 
@@ -24,16 +21,7 @@ public class LevelTimer : MonoBehaviour
     {
         if (!finish)
         {
-            if (seconds > 0)
-            {
-                seconds -= Time.deltaTime;
-                timer = Mathf.Ceil(seconds);
-                textMesh.text = "Seconds: " + timer;
-            }
-            else
-            {
-                Lose();
-            }
+            textMesh.text = "Find the crystal!\nTouch the door to give up";
         }
     }
 
@@ -58,28 +46,5 @@ public class LevelTimer : MonoBehaviour
             Crystals.Ocean = 1;
         }
         Instantiate(winCrystal, spawn);
-    }
-
-    public void Lose()
-    {
-        finish = true;
-        textMesh.text = "You lose! Touch the crystal to exit";
-        if (zone == "Aztec")
-        {
-            Crystals.Aztec = 2;
-        }
-        else if (zone == "Medieval")
-        {
-            Crystals.Medieval = 2;
-        }
-        else if (zone == "Futuristic")
-        {
-            Crystals.Futuristic = 2;
-        }
-        else if (zone == "Ocean")
-        {
-            Crystals.Ocean = 2;
-        }
-        Instantiate(loseCrystal, spawn);
     }
 }

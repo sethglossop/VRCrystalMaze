@@ -4,8 +4,7 @@ using UnityEngine;
 using Valve.VR.InteractionSystem;
 using UnityEngine.SceneManagement;
 
-
-public class ChangeZone : MonoBehaviour
+public class GiveUp : MonoBehaviour
 {
     private Interactable interactable;
     public string zone;
@@ -27,7 +26,23 @@ public class ChangeZone : MonoBehaviour
 
         if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
         {
-            SceneManager.LoadScene(zone);
+            if (zone == "Aztec")
+            {
+                Crystals.Aztec = 2;
+            }
+            else if (zone == "Medieval")
+            {
+                Crystals.Medieval = 2;
+            }
+            else if (zone == "Futuristic")
+            {
+                Crystals.Futuristic = 2;
+            }
+            else if (zone == "Ocean")
+            {
+                Crystals.Ocean = 2;
+            }
+            SceneManager.LoadScene("Dome");
         }
     }
 }

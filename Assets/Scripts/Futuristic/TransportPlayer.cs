@@ -2,26 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MazeTarget : MonoBehaviour
+public class TransportPlayer : MonoBehaviour
 {
-    public WinLose levelTimer;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (levelTimer.finish)
-        {
-            Destroy(gameObject);
-        }
+        
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void Transport(Transform location)
     {
-        levelTimer.Win();
+        transform.position = location.position - Vector3.left*0.7f;
     }
 }

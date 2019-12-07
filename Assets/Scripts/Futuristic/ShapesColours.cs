@@ -10,7 +10,7 @@ public class ShapesColours : MonoBehaviour
     public LightColour redLight;
     public LightColour cyanLight;
     public LightColour yellowLight;
-    public LevelTimer level;
+    public WinLose level;
     // Start is called before the first frame update
     void Start()
     {

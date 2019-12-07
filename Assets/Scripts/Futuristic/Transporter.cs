@@ -2,23 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
-using UnityEngine.SceneManagement;
 
-
-public class ChangeZone : MonoBehaviour
+public class Transporter : MonoBehaviour
 {
     private Interactable interactable;
-    public string zone;
+    public Transform transport;
+    private TransportPlayer player;
+
     // Start is called before the first frame update
     void Start()
     {
         interactable = GetComponent<Interactable>();
+        player = FindObjectOfType<TransportPlayer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     private void HandHoverUpdate(Hand hand)
     {
@@ -27,7 +28,8 @@ public class ChangeZone : MonoBehaviour
 
         if (interactable.attachedToHand == null && startingGrabType != GrabTypes.None)
         {
-            SceneManager.LoadScene(zone);
+            player.Transport(transport);
         }
+
     }
 }

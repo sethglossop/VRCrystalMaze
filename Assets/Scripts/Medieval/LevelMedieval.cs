@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class LevelMedieval : MonoBehaviour
 { 
-    public int targets;
-    private LevelTimer levelTimer;
+    public float targets;
+    private WinLose levelTimer;
   
     // Start is called before the first frame update
     void Start()
     {
         targets = GameObject.FindGameObjectsWithTag("Target").Length;
-        levelTimer = FindObjectOfType<LevelTimer>();
+        levelTimer = FindObjectOfType<WinLose>();
     }
 
     // Update is called once per frame
