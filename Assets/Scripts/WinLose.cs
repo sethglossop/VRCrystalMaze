@@ -9,6 +9,7 @@ public class WinLose : MonoBehaviour
     public GameObject winCrystal;
     public bool finish = false;
     public string zone;
+    public float seconds;
 
     // Start is called before the first frame update
     void Start()
@@ -19,9 +20,15 @@ public class WinLose : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (seconds < 0)
+        {
+            Lose();
+        }
+
         if (!finish)
         {
-            textMesh.text = "Find the crystal!\nTouch the door to give up";
+            seconds -= Time.deltaTime;
+            textMesh.text = "Find the crystal!\n" + Mathf.Ceil(seconds) + " seconds to go\nTouch the door to give up";
         }
     }
 
@@ -46,5 +53,11 @@ public class WinLose : MonoBehaviour
             Crystals.Ocean = 1;
         }
         Instantiate(winCrystal, spawn);
+    }
+
+    private void Lose()
+    {
+        finish = true;
+        textMesh.text = "You lose!\nTouch the door to exit";
     }
 }

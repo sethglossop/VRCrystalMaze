@@ -16,15 +16,16 @@ public class Chest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (level.finish)
-        {
-            spawn.transform.parent = null;
-            Destroy(gameObject);
-        }
+
     }
     private void OnTriggerEnter(Collider other)
     {
-        level.Win();
+        spawn.transform.parent = null;
+        Destroy(gameObject);
         Destroy(other.gameObject);
+        if (!level.finish)
+        {
+            level.Win();
+        }
     }
 }

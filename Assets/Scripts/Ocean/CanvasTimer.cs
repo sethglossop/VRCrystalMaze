@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CanvasTimer : MonoBehaviour
 {
-    public float timer = 0;
+    private float timer = 0;
+    public float stuntime;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,7 @@ public class CanvasTimer : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > 1)
+        if (timer > stuntime)
         {
             timer = 0;
             gameObject.SetActive(false);

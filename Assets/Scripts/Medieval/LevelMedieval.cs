@@ -5,21 +5,21 @@ using UnityEngine;
 public class LevelMedieval : MonoBehaviour
 { 
     public float targets;
-    private WinLose levelTimer;
+    private WinLose winLose;
   
     // Start is called before the first frame update
     void Start()
     {
         targets = GameObject.FindGameObjectsWithTag("Target").Length;
-        levelTimer = FindObjectOfType<WinLose>();
+        winLose = FindObjectOfType<WinLose>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (targets == 0)
+        if (targets == 0 && !winLose.finish)
         {
-            levelTimer.Win();
+            winLose.Win();
         }
     }
 }

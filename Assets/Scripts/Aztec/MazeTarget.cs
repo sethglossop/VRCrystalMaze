@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MazeTarget : MonoBehaviour
 {
-    public WinLose levelTimer;
+    public WinLose level;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,14 +14,15 @@ public class MazeTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (levelTimer.finish)
-        {
-            Destroy(gameObject);
-        }
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        levelTimer.Win();
+        if (!level.finish)
+        {
+            Destroy(gameObject);
+            level.Win();
+        }
     }
 }

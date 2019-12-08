@@ -8,6 +8,7 @@ public class TargetMove : MonoBehaviour
     private LevelMedieval level;
     public float maxTargets;
     private float currentSpeed;
+    public WinLose winLose;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,7 @@ public class TargetMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (level.targets > 0)
+        if (!winLose.finish)
         {
             currentSpeed = 1 - (level.targets / maxTargets);
             transform.Rotate(0, maxSpeed * currentSpeed, 0);

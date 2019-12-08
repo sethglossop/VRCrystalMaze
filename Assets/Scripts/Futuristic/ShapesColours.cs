@@ -20,7 +20,7 @@ public class ShapesColours : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (cubeTable.correct && cylinderTable.correct && sphereTable.correct && redLight.red && cyanLight.green && cyanLight.blue && yellowLight.red && yellowLight.green)
+        if (cubeTable.correct && cylinderTable.correct && sphereTable.correct && redLight.red && cyanLight.green && cyanLight.blue && yellowLight.red && yellowLight.green && !level.finish)
         {
             level.Win();
         }

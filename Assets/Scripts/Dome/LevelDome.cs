@@ -10,6 +10,7 @@ public class LevelDome : MonoBehaviour
     public int totalScore = 0;
     public int crystals;
     public float time;
+    public int toWin;
     
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class LevelDome : MonoBehaviour
             Level = 1;
         }
         crystals = (Crystals.Aztec % 2) + (Crystals.Medieval % 2) + (Crystals.Futuristic % 2) + (Crystals.Medieval % 2);
-        time = 10 + (crystals*10);
+        time = 20 + (crystals*10);
     }
 
     // Update is called once per frame
