@@ -6,6 +6,7 @@ public class Chest : MonoBehaviour
 {
     public WinLose level;
     public GameObject spawn;
+    public AudioSource destroy;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class Chest : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
+        destroy.Play();
         spawn.transform.parent = null;
         Destroy(gameObject);
         Destroy(other.gameObject);

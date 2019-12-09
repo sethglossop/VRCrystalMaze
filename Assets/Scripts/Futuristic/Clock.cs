@@ -19,6 +19,7 @@ public class Clock : MonoBehaviour
     public GameObject activeCube;
     public GameObject activeCylinder;
     public GameObject activeSphere;
+    public AudioSource sound;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +41,7 @@ public class Clock : MonoBehaviour
     }
     private void CorrectTime()
     {
+        sound.Play();
         Destroy(door);
         Destroy(inactiveCube);
         Destroy(inactiveCylinder);

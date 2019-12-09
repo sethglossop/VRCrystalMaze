@@ -5,7 +5,7 @@ using Valve.VR.InteractionSystem;
 
 public class CannonDestroy : MonoBehaviour
 {
-
+    public AudioSource destroy;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +21,7 @@ public class CannonDestroy : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        destroy.Play();
         Destroy(gameObject);
         Destroy(other.gameObject);
     }

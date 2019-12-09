@@ -8,7 +8,10 @@ public class TextTimer : MonoBehaviour
     private TextMesh textMesh;
     private float timer;
     public float seconds;
+    private int countdown = 5;
+    private bool finish = false;
     public GameObject spawn;
+    public AudioSource tick;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +24,16 @@ public class TextTimer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (seconds > 0)
+        if (seconds > 0 && !finish)
         {
             seconds -= Time.deltaTime;
             timer = Mathf.Floor(seconds);
             textMesh.text = "Seconds: " + timer;
+            if (timer == countdown && countdown >= 0)
+            {
+                tick.Play();
+                countdown--;
+            }
         }
         else
         {
@@ -36,7 +44,8 @@ public class TextTimer : MonoBehaviour
     private void Finish()
     {
         levelDome.time = 0;
-        if(levelDome.totalScore >= levelDome.toWin)
+        finish = true;
+        if (levelDome.totalScore >= levelDome.toWin)
         {
             textMesh.text = "Time up, you win!";
         }

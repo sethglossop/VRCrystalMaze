@@ -10,6 +10,10 @@ public class WinLose : MonoBehaviour
     public bool finish = false;
     public string zone;
     public float seconds;
+    private float timer;
+    private int countdown = 5;
+    public AudioSource tick;
+    public AudioSource win;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +32,20 @@ public class WinLose : MonoBehaviour
         if (!finish)
         {
             seconds -= Time.deltaTime;
-            textMesh.text = "Find the crystal!\n" + Mathf.Ceil(seconds) + " seconds to go\nTouch the door to give up";
+            timer = Mathf.Ceil(seconds);
+            textMesh.text = "Find the crystal!\n" + timer + " seconds to go\nTouch the door to give up";
+            if (timer == countdown)
+            {
+                tick.Play();
+                countdown--;
+            }
         }
     }
 
     public void Win()
     {
         finish = true;
+        win.Play();
         textMesh.text = "You win! Touch the crystal to exit";
         if (zone == "Aztec")
         {
@@ -57,6 +68,7 @@ public class WinLose : MonoBehaviour
 
     private void Lose()
     {
+        tick.Stop();
         finish = true;
         textMesh.text = "You lose!\nTouch the door to exit";
     }

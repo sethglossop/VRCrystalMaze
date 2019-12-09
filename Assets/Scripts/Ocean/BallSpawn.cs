@@ -7,6 +7,7 @@ public class BallSpawn : MonoBehaviour
     public GameObject ball;
     private float timeelapsed = 0;
     private float maxtime = 5;
+    public AudioSource cannon;
 
     // Start is called before the first frame update
     void Start()
@@ -26,6 +27,7 @@ public class BallSpawn : MonoBehaviour
 
     void Shoot()
     {
+        cannon.Play();
         Instantiate(ball, transform.position,Quaternion.identity);
         timeelapsed = 0;
     }
