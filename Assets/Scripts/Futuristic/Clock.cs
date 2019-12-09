@@ -20,11 +20,16 @@ public class Clock : MonoBehaviour
     public GameObject activeCylinder;
     public GameObject activeSphere;
     public AudioSource sound;
+    public Text otherClock;
+    private int hour;
+    private int minute;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        hour = Random.Range(1, 12);
+        minute = 5*Random.Range(0, 11);
+        otherClock.text = hour + ":" + minute;
     }
 
     // Update is called once per frame
@@ -33,7 +38,8 @@ public class Clock : MonoBehaviour
         minuteAngle = minuteHand.localEulerAngles.z;
         hourAngle = hourHand.localEulerAngles.z;
 
-        if (!correctTime && hourAngle > 265 && hourAngle < 275 & minuteAngle < 155 && minuteAngle > 145)
+        //        if (!correctTime && hourAngle > 265 && hourAngle < 275 & minuteAngle < 155 && minuteAngle > 145)
+        if (!correctTime && hourAngle > (355 - (30 * hour)) && hourAngle < (365 - (30 * hour)) + 5 & minuteAngle < (365 - (6 * minute)) && minuteAngle > (355 - (6 * minute)))
         {
             correctTime = true;
             CorrectTime();
