@@ -17,6 +17,6 @@ public class TextScore : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textMesh.text = "Gold: " + levelDome.goldScore + "\nSilver: " + levelDome.silverScore + "\nTotal: " + levelDome.totalScore;
+        textMesh.text = "Gold: " + levelDome.goldScore + "\nSilver: -" + levelDome.silverScore + "\nTotal: " + levelDome.totalScore;
     }
 }

@@ -47,7 +47,7 @@ public class TextTimer : MonoBehaviour
         finish = true;
         if (levelDome.totalScore >= levelDome.toWin)
         {
-            textMesh.text = "Time up, you win!";
+            textMesh.text = "You win!";
         }
         else
         {

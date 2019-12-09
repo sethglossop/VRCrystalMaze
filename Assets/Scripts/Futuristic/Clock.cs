@@ -20,15 +20,15 @@ public class Clock : MonoBehaviour
     public GameObject activeCylinder;
     public GameObject activeSphere;
     public AudioSource sound;
-    public Text otherClock;
+    public TextMesh otherClock;
     private int hour;
     private int minute;
 
     // Start is called before the first frame update
     void Start()
     {
-        hour = Random.Range(1, 12);
-        minute = 5*Random.Range(0, 11);
+        hour = Random.Range(1, 11);
+        minute = 5*Random.Range(2, 11);
         otherClock.text = hour + ":" + minute;
     }
 
