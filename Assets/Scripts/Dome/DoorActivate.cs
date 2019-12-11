@@ -7,7 +7,6 @@ public class DoorActivate : MonoBehaviour
     public string zone;
     private int zoneref;
 
-    // Start is called before the first frame update
     void Start()
     {
         if (zone == "Aztec")
@@ -31,11 +30,5 @@ public class DoorActivate : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

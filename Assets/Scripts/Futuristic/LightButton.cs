@@ -10,7 +10,6 @@ public class LightButton : MonoBehaviour
     public LightColour lamp;
     public string colour;
 
-    // Start is called before the first frame update
     void Start()
     {
         interactable = GetComponent<Interactable>();
@@ -37,7 +36,6 @@ public class LightButton : MonoBehaviour
             }
             OnOff();
         }
-
     }
     private void OnOff()
     {

@@ -10,7 +10,6 @@ public class BallMove : MonoBehaviour
     private float speed = 1.5f;
     private float destroyTime = 0;
 
-    // Start is called before the first frame update
     void Start()
     {
         cannonMove = FindObjectOfType<CannonMove>();
@@ -18,7 +17,6 @@ public class BallMove : MonoBehaviour
         aim = player.transform.position - transform.position;
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(aim*speed*Time.deltaTime);

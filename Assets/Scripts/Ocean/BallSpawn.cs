@@ -9,13 +9,6 @@ public class BallSpawn : MonoBehaviour
     private float maxtime = 5;
     public AudioSource cannon;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         timeelapsed += Time.deltaTime;
@@ -24,7 +17,6 @@ public class BallSpawn : MonoBehaviour
             Shoot();
         }
     }
-
     void Shoot()
     {
         cannon.Play();

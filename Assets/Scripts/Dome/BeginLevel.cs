@@ -11,17 +11,11 @@ public class BeginLevel : MonoBehaviour
     public GameObject panelRight;
     public GameObject scoreTimer;
 
-    // Start is called before the first frame update
     void Start()
     {
         interactable = GetComponent<Interactable>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     private void HandHoverUpdate(Hand hand)
     {
         GrabTypes startingGrabType = hand.GetGrabStarting();
@@ -35,6 +29,5 @@ public class BeginLevel : MonoBehaviour
             scoreTimer.SetActive(true);
             gameObject.SetActive(false);
         }
-
     }
 }

@@ -10,14 +10,12 @@ public class TargetMove : MonoBehaviour
     private float currentSpeed;
     public WinLose winLose;
 
-    // Start is called before the first frame update
     void Start()
     {
         level = FindObjectOfType<LevelMedieval>();
         maxTargets = level.targets;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (!winLose.finish)

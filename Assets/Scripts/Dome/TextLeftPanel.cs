@@ -7,14 +7,11 @@ public class TextLeftPanel : MonoBehaviour
     private TextMesh textMesh;
     private LevelDome levelDome;
 
-    // Start is called before the first frame update
     void Start()
     {
         textMesh = GetComponent<TextMesh>();
         levelDome = FindObjectOfType<LevelDome>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         if (levelDome.Level == 0)

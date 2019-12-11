@@ -8,17 +8,12 @@ public class GiveUp : MonoBehaviour
 {
     private Interactable interactable;
     public string zone;
-    // Start is called before the first frame update
+
     void Start()
     {
         interactable = GetComponent<Interactable>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void HandHoverUpdate(Hand hand)
     {
         GrabTypes startingGrabType = hand.GetGrabStarting();

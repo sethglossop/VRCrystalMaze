@@ -8,7 +8,6 @@ public class GrabTicket : MonoBehaviour
     private Interactable interactable;
     private LevelDome levelDome;
 
-    // Start is called before the first frame update
     void Start()
     {
         interactable = GetComponent<Interactable>();
@@ -32,7 +31,6 @@ public class GrabTicket : MonoBehaviour
             }
             Destroy(gameObject);
         }
-
     }
 }
 

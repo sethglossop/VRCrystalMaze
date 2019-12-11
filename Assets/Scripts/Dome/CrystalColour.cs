@@ -10,7 +10,6 @@ public class CrystalColour : MonoBehaviour
     public string zone;
     private int zoneref;
 
-    // Start is called before the first frame update
     void Start()
     {
         original = GetComponent<Renderer>();
@@ -40,11 +39,5 @@ public class CrystalColour : MonoBehaviour
         {
             original.material = lose;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

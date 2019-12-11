@@ -9,13 +9,11 @@ public class LightColour : MonoBehaviour
     public bool blue = false;
     public bool green = false;
 
-    // Start is called before the first frame update
     void Start()
     {
         lamp = GetComponent<Light>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (red && blue && green)

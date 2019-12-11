@@ -11,13 +11,7 @@ public class ShapesColours : MonoBehaviour
     public LightColour cyanLight;
     public LightColour yellowLight;
     public WinLose level;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         if (cubeTable.correct && cylinderTable.correct && sphereTable.correct && redLight.red && cyanLight.green && cyanLight.blue && yellowLight.red && yellowLight.green && !level.finish)

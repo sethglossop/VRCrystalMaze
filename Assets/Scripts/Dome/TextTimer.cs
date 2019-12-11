@@ -13,7 +13,6 @@ public class TextTimer : MonoBehaviour
     public GameObject spawn;
     public AudioSource tick;
 
-    // Start is called before the first frame update
     void Start()
     {
         textMesh = GetComponent<TextMesh>();
@@ -21,7 +20,6 @@ public class TextTimer : MonoBehaviour
         seconds = levelDome.time;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (seconds > 0 && !finish)

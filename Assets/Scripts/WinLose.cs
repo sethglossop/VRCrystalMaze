@@ -15,13 +15,11 @@ public class WinLose : MonoBehaviour
     public AudioSource tick;
     public AudioSource win;
 
-    // Start is called before the first frame update
     void Start()
     {
         textMesh = GetComponent<TextMesh>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (seconds < 0)

@@ -11,14 +11,12 @@ public class TargetHit : MonoBehaviour
     private float fallingRate;
     private LevelMedieval level;
 
-    // Start is called before the first frame update
     void Start()
     {
         level = FindObjectOfType<LevelMedieval>();
         fallingRate = rotation / fallingTime;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (targetHit && elapsedTime < fallingTime)
